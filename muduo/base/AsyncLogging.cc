@@ -84,6 +84,7 @@ void AsyncLogging::threadFunc()
 
     assert(!buffersToWrite.empty());
 
+    // 丢过大日志, 但是为什么只留下前两块日志？
     if (buffersToWrite.size() > 25)
     {
       char buf[256];
@@ -107,6 +108,7 @@ void AsyncLogging::threadFunc()
       buffersToWrite.resize(2);
     }
 
+    // 看不懂!!!
     if (!newBuffer1)
     {
       assert(!buffersToWrite.empty());

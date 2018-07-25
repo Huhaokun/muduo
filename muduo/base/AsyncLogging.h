@@ -19,7 +19,7 @@ class AsyncLogging : noncopyable
  public:
 
   AsyncLogging(const string& basename,
-               off_t rollSize,
+               off_t rollSize, // posix 标准，表示文件偏移量
                int flushInterval = 3);
 
   ~AsyncLogging()

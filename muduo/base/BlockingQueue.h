@@ -50,6 +50,8 @@ class BlockingQueue : noncopyable
       notEmpty_.wait();
     }
     assert(!queue_.empty());
+
+    // queue_ 不提供返回值的 pop
     T front(std::move(queue_.front()));
     queue_.pop_front();
     return std::move(front);
